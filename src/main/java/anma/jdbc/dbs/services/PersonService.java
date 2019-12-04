@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class PersonService {
 
-    public static void createPerson(Statement statement, String table, Person person) {
+    public static boolean createPerson(Statement statement, String table, Person person) {
 
         try {
             statement.execute("insert into " + table
@@ -17,8 +17,11 @@ public class PersonService {
                     + person.getLastName() +","
                     + person.getAge()
                     + ")");
+
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
 
     }
