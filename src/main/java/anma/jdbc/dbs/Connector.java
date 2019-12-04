@@ -4,20 +4,18 @@ import java.sql.*;
 
 public class Connector {
 
-    public static Statement getStatement(String url, String user, String password) throws SQLException {
+    public static Connection getStatement(String url, String user, String password) throws SQLException {
 
-        try (Connection connection =
-                     DriverManager.getConnection("jdbc:postgresql://localhost:5433/persons", "andriim", "Porkie")) {
+        Connection connection =
+                     DriverManager.getConnection("jdbc:postgresql://localhost:5433/persons", "andriim", "Porkie");
 
-            Class.forName("org.postgresql.Driver");
+            try {
+                Class.forName("org.postgresql.Driver");
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
 
-            return connection.createStatement();
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
-
+            return connection;
     }
 
     public static ResultSet getResults(Statement statement, String table) {
