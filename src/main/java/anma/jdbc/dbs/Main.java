@@ -14,11 +14,11 @@ public class Main {
 
         Connection connection = Connector.getStatement("jdbc:postgresql://localhost:5433/persons", "andriim", "Porkie");
 
-        System.out.println(connection.createStatement().getConnection().isClosed());
+//        System.out.println(connection.createStatement().getConnection().isClosed());
 
         Person ignat = new Person(2, "Ignat", "Ignatenko", 36);
 
-        PersonService.createPerson(connection.createStatement(), "public.persons", ignat);
+        System.out.println(PersonService.createPerson(connection.createStatement(), "public.persons", ignat));
 
         ResultSet resultSet = Connector.getResults(connection.createStatement(), "public.persons");
 

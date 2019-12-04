@@ -7,21 +7,32 @@ import java.sql.Statement;
 
 public class PersonService {
 
-    public static boolean createPerson(Statement statement, String table, Person person) {
+    public static String createPerson(Statement statement, String table, Person person) {
+
+        String sql = "insert into " + table
+                + " values ("
+                + person.getId() + ","
+                + "\'" +
+                person.getFirstName()
+                + "\'" +","
+                + "\'"
+                + person.getLastName()
+                + "\'"
+                +","
+                + person.getAge()
+                + ")";
 
         try {
-            statement.execute("insert into " + table
-                    + " values ("
-                    + person.getId() + ","
-                    + person.getFirstName() +","
-                    + person.getLastName() +","
-                    + person.getAge()
-                    + ")");
 
-            return true;
+            statement.execute(sql);
+
+            return sql;
+
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            System.out.println(sql);
+            return "false";
+
         }
 
     }
