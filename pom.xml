@@ -6,7 +6,7 @@
 
     <groupId>anma.databases</groupId>
     <artifactId>databases-1</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <dependencies>
 
@@ -23,6 +23,15 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.8</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.10.Final</version>
+        </dependency>
+
+
 
     </dependencies>
 
