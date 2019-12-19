@@ -1,6 +1,6 @@
 package anma.hibernate;
 
-import anma.hibernate.models.Person;
+import anma.hibernate.models.Dog;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -29,11 +29,11 @@ public class HibernateMain {
 
         MetadataSources sources = new MetadataSources();
 
-        sources.addAnnotatedClass(Person.class);
+        sources.addAnnotatedClass(Dog.class);
 
         SessionFactory factory = new Configuration()
                 .configure()
-                .addAnnotatedClass(Person.class)
+                .addAnnotatedClass(Dog.class)
                 .buildSessionFactory();
 
 //        ServiceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
@@ -44,15 +44,19 @@ public class HibernateMain {
 
         try {
 
-            Person person = new Person();
-            person.setFirstName("Vasyl");
-            person.setLastName("Vasylenko");
+            Dog dog = new Dog();
+            dog.setId(1);
+            dog.setName("Sharik");
+            dog.setAge(5);
+            dog.setColor("red");
 
             session.beginTransaction();
 
-            session.save(person);
+            session.save(dog);
 
             session.getTransaction().commit();
+
+            System.out.println("Done!");
 
 
         } finally {
