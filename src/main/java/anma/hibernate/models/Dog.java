@@ -8,16 +8,16 @@ public class Dog {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="cat_id")
+    @Column(name="dog_id")
     private Integer id;
 
-    @Column(name="dog_name")
+//    @Column(name="dog_name")
     private String name;
 
-    @Column(name = "cat_age")
+//    @Column(name = "dog_age")
     private int age;
 
-    @Column(name = "cat_color")
+//    @Column(name = "dog_color")
     private String color;
 
     public Dog(String name, int age, String color) {
@@ -59,5 +59,15 @@ public class Dog {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", color='" + color + '\'' +
+                '}';
     }
 }

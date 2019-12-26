@@ -33,6 +33,7 @@ public class QueryDog {
             session.getTransaction().commit();
 
             System.out.println("Done!");
+            System.out.println(dogs.get(0));
 
 
         }
