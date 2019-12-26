@@ -1,5 +1,6 @@
-package anma.hibernate.cfg;
+package anma.hibernate.cfg.crud;
 
+import anma.hibernate.cfg.HibernateCfgUtil;
 import anma.hibernate.models.Dog;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,38 +11,35 @@ import org.hibernate.cfg.Configuration;
 
 public class CreateDog {
 
-    public static void main(String[] args) {
+    public static Dog createDog(String name, int age, String color) {
 
-        // create session factory
-        SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Dog.class)
-                .buildSessionFactory();
+        SessionFactory factory = HibernateCfgUtil.getSessionFactory();
 
-        // create session
+        Dog dog;
+
         Session session = factory.getCurrentSession();
 
         try {
 
-            Dog dog = new Dog("barsik", 5, "red");
+            dog = new Dog(name, age, color);
 
             // start a transaction
             session.beginTransaction();
 
             // save the student object
-            System.out.println("Saving the dog...");
             session.save(dog);
 
             // commit transaction
             session.getTransaction().commit();
+            System.out.println("Dog created! ");
+            System.out.println(dog.toString());
 
-            System.out.println("Done!");
 
         } finally {
             factory.close();
         }
 
-
+        return dog;
 
     }
 

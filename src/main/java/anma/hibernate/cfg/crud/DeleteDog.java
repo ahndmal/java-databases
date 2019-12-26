@@ -1,4 +1,4 @@
-package anma.hibernate.cfg;
+package anma.hibernate.cfg.crud;
 
 import anma.hibernate.models.Dog;
 import org.hibernate.Session;

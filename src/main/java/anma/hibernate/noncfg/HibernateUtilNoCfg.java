@@ -10,7 +10,7 @@ import org.hibernate.cfg.Environment;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HibernateUtil {
+public class HibernateUtilNoCfg {
 
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
@@ -28,7 +28,7 @@ public class HibernateUtil {
                 Map<String, String> settings = new HashMap<>();
 
                 settings.put(Environment.DRIVER, "org.postgresql.Driver");
-                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/dogs");
+                settings.put(Environment.URL, "jdbc:postgresql://localhost:5433/dogs");
                 settings.put(Environment.USER, "andriim");
                 settings.put(Environment.PASS, "Porkie");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL9Dialect");

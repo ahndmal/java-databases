@@ -1,4 +1,4 @@
-package anma.hibernate.cfg;
+package anma.hibernate.cfg.crud;
 
 import anma.hibernate.models.Dog;
 import org.hibernate.Session;
@@ -24,16 +24,18 @@ public class QueryDog {
 
             List<Dog> dogs = session.createQuery("from Dog").getResultList();
 
-            dogs = session.createQuery("from Dog d where d.name='Barsik'").getResultList();
+//            dogs = session.createQuery("from Dog d where d.name='Barsik'").getResultList();
 
-            dogs =
-                    session.createQuery("from Dog d where"
-                            + " d.name='Barsik' OR d.age='5'").getResultList();
+//            dogs =
+//                    session.createQuery("from Dog d where"
+//                            + " d.name='Barsik' OR d.age='5'").getResultList();
 
             session.getTransaction().commit();
 
-            System.out.println("Done!");
-            System.out.println(dogs.get(0));
+            System.out.println("Getting dogs......");
+            for (Dog dog : dogs) {
+                System.out.println(dog);
+            }
 
 
         }
