@@ -6,16 +6,13 @@ public class Connector {
 
     public static Connection getStatement(String url, String user, String password) throws SQLException {
 
-        Connection connection =
-                     DriverManager.getConnection("jdbc:postgresql://localhost:5433/persons", "andriim", "Porkie");
+//        String jdbcUrl = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=UTC";
+//        String user = "hbstudent";
+//        String pass = "hbstudent";
 
-            try {
-                Class.forName("org.postgresql.Driver");
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+        return DriverManager.getConnection(url, user, password);
+//                Class.forName("org.postgresql.Driver");
 
-            return connection;
     }
 
     public static ResultSet getResults(Statement statement, String table) {

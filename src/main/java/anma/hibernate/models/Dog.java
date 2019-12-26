@@ -1,23 +1,33 @@
 package anma.hibernate.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="dogs")
 public class Dog {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="cat_id")
     private Integer id;
 
     @Column(name="dog_name")
     private String name;
 
+    @Column(name = "cat_age")
     private int age;
 
+    @Column(name = "cat_color")
     private String color;
+
+    public Dog(String name, int age, String color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+    }
+
+    public Dog() {
+    }
 
     public Integer getId() {
         return id;

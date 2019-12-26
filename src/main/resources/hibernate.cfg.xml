@@ -9,7 +9,7 @@
         <!-- JDBC Database connection settings -->
 <!--        <property name="connection.driver_class">com..cj.jdbc.Driver</property>-->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5433/persons?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5433/dogs?useSSL=false&amp;serverTimezone=UTC</property>
         <property name="connection.username">andriim</property>
         <property name="connection.password">Porkie</property>
 
