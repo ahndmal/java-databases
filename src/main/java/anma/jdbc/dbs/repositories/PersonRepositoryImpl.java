@@ -1,6 +1,6 @@
 package anma.jdbc.dbs.repositories;
 
-import anma.jdbc.dbs.JdbcDBConnector;
+import anma.jdbc.dbs.config.JdbcDBConnector;
 import anma.jdbc.dbs.models.Person;
 
 import java.sql.SQLException;

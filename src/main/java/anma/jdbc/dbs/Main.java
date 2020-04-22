@@ -1,13 +1,8 @@
 package anma.jdbc.dbs;
 
-import anma.jdbc.dbs.models.Person;
-import anma.jdbc.dbs.repositories.PersonRepositoryImpl;
-import anma.jdbc.dbs.services.PersonService;
+import anma.jdbc.dbs.config.JdbcDBConnector;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.UUID;
 
 public class Main {
 
@@ -15,6 +10,6 @@ public class Main {
 
 //        System.out.println(new PersonRepositoryImpl().createPerson(new Person(UUID.randomUUID(), "Vasyl", "Vasylenko", 45)));
 
-        new JdbcDBConnector().getAllPersons().forEach(p -> System.out.println(p.getLastName()));
+        new JdbcDBConnector().getPersonsByLastName("Vasylenko").forEach(p -> System.out.println(p.getLastName()));
     }
 }
