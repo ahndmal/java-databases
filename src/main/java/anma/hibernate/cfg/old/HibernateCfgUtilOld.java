@@ -1,11 +1,10 @@
-package anma.hibernate.cfg;
+package anma.hibernate.cfg.old;
 
 import anma.hibernate.models.Dog;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateCfgUtil {
+public class HibernateCfgUtilOld {
 
     private static SessionFactory sessionFactory;
 
@@ -15,7 +14,7 @@ public class HibernateCfgUtil {
             try {
 
                 sessionFactory = new Configuration()
-                        .configure("hibernate.cfg.xml")
+                        .configure("old-hibernate.cfg.xml")
                         .addAnnotatedClass(Dog.class)
                         .buildSessionFactory();
 

@@ -1,19 +1,17 @@
 package anma.hibernate.cfg;
 
-import anma.hibernate.cfg.crud.CreateDog;
-import anma.hibernate.noncfg.HibernateUtilNoCfg;
-import org.hibernate.Session;
+import anma.hibernate.cfg.config.HibernateDBConnector;
+import anma.hibernate.cfg.old.crud.CreateDog;
+import anma.hibernate.models.Dog;
 
 public class CfgExec {
 
     public static void main(String[] args) {
 
-//        Session session = HibernateCfgUtil.getSessionFactory().openSession();
-//        session.beginTransaction();
+//        new HibernateDBConnector().createDog(new Dog("Tuzik", 5, "red"));
 
+//        new HibernateDBConnector().getAllDogs().forEach(dog -> System.out.println(dog));
 
-        CreateDog.createDog("Sharik", 7, "red");
-
-
+        System.out.println(new HibernateDBConnector().getDogById(1));;
     }
 }

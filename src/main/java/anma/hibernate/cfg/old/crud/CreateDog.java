@@ -1,11 +1,9 @@
-package anma.hibernate.cfg.crud;
+package anma.hibernate.cfg.old.crud;
 
-import anma.hibernate.cfg.HibernateCfgUtil;
+import anma.hibernate.cfg.old.HibernateCfgUtilOld;
 import anma.hibernate.models.Dog;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.cfg.Configuration;
 
 //import org.hibernate.cfg.AnnotationConfiguration;
 
@@ -13,7 +11,7 @@ public class CreateDog {
 
     public static Dog createDog(String name, int age, String color) {
 
-        SessionFactory factory = HibernateCfgUtil.getSessionFactory();
+        SessionFactory factory = HibernateCfgUtilOld.getSessionFactory();
 
         Dog dog;
 

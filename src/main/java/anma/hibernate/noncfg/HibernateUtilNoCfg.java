@@ -24,7 +24,7 @@ public class HibernateUtilNoCfg {
                 // Create registry builder
                 StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
 
-                // Hibernate settings equivalent to hibernate.cfg.xml's properties
+                // Hibernate settings equivalent to old-hibernate.cfg.xml's properties
                 Map<String, String> settings = new HashMap<>();
 
                 settings.put(Environment.DRIVER, "org.postgresql.Driver");

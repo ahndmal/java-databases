@@ -1,4 +1,4 @@
-package anma.hibernate.cfg.crud;
+package anma.hibernate.cfg.old.crud;
 
 import anma.hibernate.models.Dog;
 import org.hibernate.Session;
@@ -10,7 +10,7 @@ public class UpdateDog {
     public static void main(String[] args) {
 
         SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
+                .configure("old-hibernate.cfg.xml")
                 .addAnnotatedClass(Dog.class)
                 .buildSessionFactory();
 
