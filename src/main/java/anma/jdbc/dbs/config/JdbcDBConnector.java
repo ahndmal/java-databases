@@ -1,9 +1,8 @@
 package anma.jdbc.dbs.config;
 
-import anma.jdbc.dbs.config.PropertiesConfig;
+import anma.PropertiesConfig;
 import anma.jdbc.dbs.models.Person;
 import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,9 +17,9 @@ public class JdbcDBConnector {
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");                                                             //for working in servlets
         return DriverManager.getConnection(
-                PropertiesConfig.getProperty(PropertiesConfig.DB_URL),
-                PropertiesConfig.getProperty(PropertiesConfig.DB_LOGIN),
-                PropertiesConfig.getProperty(PropertiesConfig.DB_PASSWORD));
+                PropertiesConfig.getProperty(PropertiesConfig.DB_URL, "persons"),
+                PropertiesConfig.getProperty(PropertiesConfig.DB_LOGIN, "persons"),
+                PropertiesConfig.getProperty(PropertiesConfig.DB_PASSWORD, "persons"));
     }
 
     public boolean createPerson(Person person) throws SQLException, ClassNotFoundException {

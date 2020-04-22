@@ -1,4 +1,4 @@
-package anma.jdbc.dbs.config;
+package anma;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -11,9 +11,9 @@ public class PropertiesConfig {
 
     private static final Properties properties = new Properties();
 
-    public static String getProperty(String name) {
+    public static String getProperty(String name, String DB) {
         if (properties.isEmpty()) {
-            try (InputStream inputStream = PropertiesConfig.class.getClassLoader().getResourceAsStream("database.properties")) {
+            try (InputStream inputStream = PropertiesConfig.class.getClassLoader().getResourceAsStream(DB)) {
                 properties.load(inputStream);
             } catch (Exception e) {
                 e.printStackTrace();
