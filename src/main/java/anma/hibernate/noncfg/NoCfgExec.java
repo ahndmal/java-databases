@@ -9,6 +9,8 @@ public class NoCfgExec {
 
     public static void main(String[] args) {
 
+
+
         Session session = HibernateUtilNoCfg.getSessionFactory().openSession();
         session.beginTransaction();
 
