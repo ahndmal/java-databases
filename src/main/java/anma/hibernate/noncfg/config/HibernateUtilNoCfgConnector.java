@@ -24,7 +24,6 @@ public class HibernateUtilNoCfgConnector {
         if (sessionFactory == null) {
 
             try {
-
                 // Create registry builder
                 StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
 
